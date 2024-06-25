@@ -1,17 +1,17 @@
 module and_gate(
-    input  in0,
-    input  in1,
+    input  a,
+    input  b,
     output out
 );
     wire nand_out;
 
-    nand_gate nand1(
-        .in0    (in0),
-        .in1    (in1),
+    nand_gate nand0(
+        .a      (a),
+        .b      (b),
         .out    (nand_out)
     );
 
-    not_gate not1(
+    not_gate not0(
         .in     (nand_out),
         .out    (out)
     );

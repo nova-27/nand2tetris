@@ -1,25 +1,25 @@
 module nand_gate_tb;
-    reg in0, in1;
+    reg a, b;
     wire out;
 
-    nand_gate nand1(
-        .in0 (in0),
-        .in1 (in1),
-        .out (out)
+    nand_gate nand0(
+        .a      (a),
+        .b      (b),
+        .out    (out)
     );
 
     initial begin
         $dumpvars(0);
-        in0 = 0; in1 = 0;
+        a = 0; b = 0;
         #10
         $display("out=%b", out);
-        in0 = 0; in1 = 1;
+        a = 0; b = 1;
         #10
         $display("out=%b", out);
-        in0 = 1; in1 = 0;
+        a = 1; b = 0;
         #10
         $display("out=%b", out);
-        in0 = 1; in1 = 1;
+        a = 1; b = 1;
         #10
         $display("out=%b", out);
         $finish;

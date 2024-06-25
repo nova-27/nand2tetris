@@ -1,35 +1,35 @@
 module xor_gate(
-    input  in0,
-    input  in1,
+    input  a,
+    input  b,
     output out
 );
-    wire not_in0, not_in1, out_and0n1, out_andn01;
+    wire not_a, not_b, out_aandnb, out_naandb;
 
-    not_gate not1(
-        .in     (in1),
-        .out    (not_in1)
+    not_gate notb(
+        .in     (b),
+        .out    (not_b)
     );
 
-    and_gate and0n1(
-        .in0    (in0),
-        .in1    (not_in1),
-        .out    (out_and0n1)
+    and_gate aandnb(
+        .a      (a),
+        .b      (not_b),
+        .out    (out_aandnb)
     );
 
-    not_gate not0(
-        .in     (in0),
-        .out    (not_in0)
+    not_gate nota(
+        .in     (a),
+        .out    (not_a)
     );
 
-    and_gate andn01(
-        .in0    (not_in0),
-        .in1    (in1),
-        .out    (out_andn01)
+    and_gate naandb(
+        .a      (not_a),
+        .b      (b),
+        .out    (out_naandb)
     );
 
     or_gate or0(
-        .in0    (out_and0n1),
-        .in1    (out_andn01),
+        .a    (out_aandnb),
+        .b    (out_naandb),
         .out    (out)
     );
 endmodule

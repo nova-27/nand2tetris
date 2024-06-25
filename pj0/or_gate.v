@@ -1,23 +1,23 @@
 module or_gate(
-    input  in0,
-    input  in1,
+    input  a,
+    input  b,
     output out
 );
-    wire not_in0, not_in1;
+    wire not_a, not_b;
 
-    not_gate not0(
-        .in     (in0),
-        .out    (not_in0)
+    not_gate nota(
+        .in     (a),
+        .out    (not_a)
     );
 
-    not_gate not1(
-        .in     (in1),
-        .out    (not_in1)
+    not_gate notb(
+        .in     (b),
+        .out    (not_b)
     );
 
     nand_gate nand0(
-        .in0    (not_in0),
-        .in1    (not_in1),
+        .a      (not_a),
+        .b      (not_b),
         .out    (out)
     );
 endmodule

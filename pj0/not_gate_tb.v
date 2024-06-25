@@ -2,9 +2,9 @@ module not_gate_tb;
     reg in;
     wire out;
 
-    not_gate not1(
-        .in (in),
-        .out (out)
+    not_gate not0(
+        .in     (in),
+        .out    (out)
     );
 
     initial begin

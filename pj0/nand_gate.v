@@ -1,7 +1,7 @@
 module nand_gate(
-    input  in0,
-    input  in1,
+    input  a,
+    input  b,
     output out
 );
-    assign out = ~(in0 & in1);
+    assign out = ~(a & b);
 endmodule
